@@ -10,6 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================
+   BODY FIX (QUAN TRỌNG NHẤT)
+========================= */
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -23,7 +27,10 @@ body {
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* 🔥 FIX: không center nữa */
+
+    padding-top: 40px;
+    padding-bottom: 110px; /* 🔥 chừa chỗ cho info bar */
 }
 
 /* Container */
@@ -93,13 +100,14 @@ button:hover {
 }
 
 /* =========================
-   INFO BAR (FIX FULL + WIFI)
+   INFO BAR (FIX FINAL)
 ========================= */
 .info-bar {
     position: fixed;
-    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+
+    bottom: calc(12px + env(safe-area-inset-bottom));
 
     display: flex;
     align-items: center;
@@ -108,12 +116,12 @@ button:hover {
 
     gap: 10px;
 
-    padding: 12px 18px;
+    padding: 10px 14px;
     border-radius: 14px;
 
-    background: rgba(20, 25, 40, 0.55);
+    background: rgba(20, 25, 40, 0.65);
     color: white;
-    font-size: 14px;
+    font-size: 13px;
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -122,6 +130,7 @@ button:hover {
     box-shadow: 0 6px 25px rgba(0,0,0,0.4);
 
     max-width: 95%;
+    z-index: 9999;
 }
 
 .info-item {
@@ -138,17 +147,13 @@ button:hover {
 }
 
 /* =========================
-   📱 MOBILE FIX
+   MOBILE FIX
 ========================= */
 @media (max-width: 768px) {
 
     body {
-        align-items: flex-start;
-        padding-top: 40px;
-    }
-
-    .container {
-        width: 95%;
+        padding-top: 25px;
+        padding-bottom: 120px; /* 🔥 đảm bảo không che info bar */
     }
 
     h1 {
@@ -174,22 +179,16 @@ button:hover {
         font-size: 22px;
     }
 
-    /* INFO BAR MOBILE FIX */
     .info-bar {
-        bottom: 10px;
-        width: 92%;
+        width: 94%;
         font-size: 12px;
-        padding: 10px 12px;
-    }
-
-    .info-item {
-        padding: 0 6px;
     }
 
     .divider {
         display: none;
     }
 }
+
 </style>
 </head>
 
@@ -222,7 +221,7 @@ button:hover {
     </div>
 </div>
 
-<!-- INFO BAR (ĐÃ FIX + WIFI) -->
+<!-- INFO BAR -->
 <div class="info-bar">
     <div class="info-item">⏰ Check-out: 12:00 PM</div>
     <div class="divider"></div>
