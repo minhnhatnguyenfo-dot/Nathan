@@ -1,40 +1,197 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            background-color: #f2f2f2;
-            margin-top: 100px;
-        }
-        h1 {
-            color: #333;
-        }
-        button {
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Sotetsu Grand Fresa Saigon</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('bg.jpg') no-repeat center center/cover;
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    text-align: center;
+    width: 600px;
+    max-width: 90%;
+}
+
+/* Title */
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-weight: 400;
+    font-size: 38px;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
+/* Subtitle */
+.sub {
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 70px;
+}
+
+/* Button */
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 18px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+
+    background: rgba(31, 42, 68, 0.6);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    background: rgba(31, 42, 68, 0.85);
+    transform: translateY(-3px);
+}
+
+.icon {
+    font-size: 18px;
+}
+
+/* 🌟 INFO BAR */
+.info-bar {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+
+    padding: 12px 25px;
+    border-radius: 14px;
+
+    background: rgba(20, 25, 40, 0.55);
+    color: white;
+    font-size: 14px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 15px;
+}
+
+.divider {
+    width: 1px;
+    height: 18px;
+    background: rgba(255,255,255,0.3);
+}
+
+/* Icon màu */
+.icon-clock { color: #4fc3f7; }      /* xanh dương */
+.icon-nosmoke { color: #ef5350; }    /* đỏ */
+.icon-wifi { color: #66bb6a; }       /* xanh lá */
+
+</style>
 </head>
+
 <body>
 
-    <h1>Welcome to Our Hotel 🏨</h1>
-    <p>Please leave us a review!</p>
+<div class="container">
+    <h1>How can we assist you today?</h1>
+    <div class="sub">Thank you for staying with us</div>
 
-    <button onclick="goToReview()">Write a Review</button>
+    <div class="buttons">
+        <button onclick="go1()">
+            <span class="icon">📝</span>
+            Your Experience
+        </button>
 
-    <script>
-        function goToReview() {
-            window.location.href = "https://www.google.com";
-        }
-    </script>
+        <button onclick="go2()">
+            <span class="icon">🎁</span>
+            Discount
+        </button>
+
+        <button onclick="go3()">
+            <span class="icon">📍</span>
+            Facilities & Services
+        </button>
+
+        <button onclick="go4()">
+            <span class="icon">📖</span>
+            Discover Saigon
+        </button>
+    </div>
+</div>
+
+<!-- 🌟 INFO BAR -->
+<div class="info-bar">
+
+    <div class="info-item">
+        <span class="icon icon-clock">⏰</span>
+        Check-out: 12:00 PM
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="info-item">
+        <span class="icon icon-nosmoke">🚭</span>
+        Non-smoking
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="info-item">
+        <span class="icon icon-wifi">📶</span>
+        Wifi code: Sotetsux
+    </div>
+
+</div>
+
+<script>
+function go1(){ window.location.href="https://www.google.com/travel/search?q=hotel%20sotetsu%20grand%20fresa&g2lb=4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72880339%2C72882230%2C72958624%2C73059275%2C73064764%2C121608705&hl=en-VN&gl=vn&ssta=1&ts=CAEaRwopEicyJTB4MzE3NTJmNjBlYWQwMzA4MzoweGVjMjY0NjBlNmQwNzM2NTcSGhIUCgcI6g8QBBgcEgcI6g8QBBgdGAEyAhAA&qs=CAEyFENnc0kxLXljNk9iQmtaUHNBUkFCOAJCCQlXNgdtDkYm7EIJCVc2B20ORibs&ap=ugEHcmV2aWV3cw&ictx=111&ved=0CAAQ5JsGahcKEwiA-d3MkfGTAxUAAAAAHQAAAAAQBA"; }
+function go2(){ window.location.href="https://sotetsu-hotels.com/member/?_gl=1*qyixlz*_ga*MjA0NTQ5NzYyMC4xNzc2MzAwMjc1*_ga_6TSFQBJGHX*czE3NzYzMDAyNzUkbzEkZzEkdDE3NzYzMDAzMjkkajYkbDAkaDA.*_ga_3WL3LZGWL6*czE3NzYzMDAyNzUkbzEkZzEkdDE3NzYzMDAzMjkkajYkbDAkaDA.&stt_lang=en"; }
+function go3(){ window.location.href="https://grandfresa-saigon.sotetsu-hotels.com/en/facilities/"; }
+function go4(){ window.location.href="https://www.expedia.com.vn/Ho-Chi-Minh-City.dx178262?utm_source=chatgpt.com"; }
+</script>
 
 </body>
 </html>
