@@ -12,7 +12,7 @@
 <style>
 
 /* =========================
-   BODY FIX (QUAN TRỌNG NHẤT)
+   BODY FIX (KIOSK STABLE)
 ========================= */
 body {
     margin: 0;
@@ -27,10 +27,10 @@ body {
 
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* 🔥 FIX: không center nữa */
+    align-items: center;
 
-    padding-top: 40px;
-    padding-bottom: 110px; /* 🔥 chừa chỗ cho info bar */
+    overflow-x: hidden;
+    position: relative;
 }
 
 /* Container */
@@ -100,39 +100,41 @@ button:hover {
 }
 
 /* =========================
-   INFO BAR (FIX FINAL)
+   INFO BAR (ULTRA FIX)
 ========================= */
 .info-bar {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
 
-    bottom: calc(12px + env(safe-area-inset-bottom));
+    bottom: calc(16px + env(safe-area-inset-bottom));
 
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
     gap: 10px;
 
     padding: 10px 14px;
     border-radius: 14px;
 
-    background: rgba(20, 25, 40, 0.65);
+    background: rgba(20, 25, 40, 0.75);
     color: white;
     font-size: 13px;
 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
-    border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.25);
 
-    max-width: 95%;
-    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+
+    z-index: 999999;
+    max-width: 95vw;
 }
 
+/* Info item */
 .info-item {
     display: flex;
     align-items: center;
@@ -140,6 +142,7 @@ button:hover {
     padding: 0 10px;
 }
 
+/* Divider */
 .divider {
     width: 1px;
     height: 16px;
@@ -152,8 +155,8 @@ button:hover {
 @media (max-width: 768px) {
 
     body {
-        padding-top: 25px;
-        padding-bottom: 120px; /* 🔥 đảm bảo không che info bar */
+        align-items: center;
+        padding-bottom: 130px;
     }
 
     h1 {
@@ -180,7 +183,7 @@ button:hover {
     }
 
     .info-bar {
-        width: 94%;
+        width: 92%;
         font-size: 12px;
     }
 
