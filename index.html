@@ -3,12 +3,10 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- ✅ FIX MOBILE ZOOM + FIT -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <title>Sotetsu Grand Fresa Saigon</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
@@ -20,7 +18,6 @@ body {
         linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
         url('bg.jpg') no-repeat center center/cover;
 
-    /* ✅ FIX iPhone + mobile full screen */
     min-height: 100vh;
     min-height: 100dvh;
 
@@ -96,7 +93,52 @@ button:hover {
 }
 
 /* =========================
-   📱 MOBILE FIX HOÀN CHỈNH
+   INFO BAR (FIX FULL + WIFI)
+========================= */
+.info-bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    padding: 12px 18px;
+    border-radius: 14px;
+
+    background: rgba(20, 25, 40, 0.55);
+    color: white;
+    font-size: 14px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+
+    max-width: 95%;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 10px;
+}
+
+.divider {
+    width: 1px;
+    height: 16px;
+    background: rgba(255,255,255,0.3);
+}
+
+/* =========================
+   📱 MOBILE FIX
 ========================= */
 @media (max-width: 768px) {
 
@@ -111,14 +153,12 @@ button:hover {
 
     h1 {
         font-size: 30px;
-        line-height: 1.2;
     }
 
     .sub {
         font-size: 14px;
     }
 
-    /* 👉 QUAN TRỌNG: 1 cột */
     .buttons {
         grid-template-columns: 1fr;
         gap: 14px;
@@ -128,20 +168,22 @@ button:hover {
     button {
         font-size: 20px;
         padding: 22px;
-        border-radius: 14px;
     }
 
     .icon {
         font-size: 22px;
     }
 
-    /* INFO BAR fix nếu bạn có */
+    /* INFO BAR MOBILE FIX */
     .info-bar {
-        flex-direction: column;
-        gap: 6px;
-        font-size: 13px;
-        padding: 10px 14px;
-        bottom: 15px;
+        bottom: 10px;
+        width: 92%;
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+
+    .info-item {
+        padding: 0 6px;
     }
 
     .divider {
@@ -178,6 +220,15 @@ button:hover {
             Discover Saigon
         </button>
     </div>
+</div>
+
+<!-- INFO BAR (ĐÃ FIX + WIFI) -->
+<div class="info-bar">
+    <div class="info-item">⏰ Check-out: 12:00 PM</div>
+    <div class="divider"></div>
+    <div class="info-item">🚭 Non-smoking</div>
+    <div class="divider"></div>
+    <div class="info-item">📶 WiFi: Sotetsux</div>
 </div>
 
 <script>
